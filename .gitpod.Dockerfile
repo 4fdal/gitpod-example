@@ -1,4 +1,3 @@
-FROM gitpod/workspace-full
+FROM gitpod/workspace-mysql               
 
-# Install custom tools, runtime, etc.
-RUN brew install fzf
+USER gitpod
