@@ -1,12 +1,12 @@
 tasks:
   - name: Terminal 1
-    before: composer create-project --prefer-dist laravel/laravel blog "5.8.*" && mv blog/{,.}* .
-    init: composer install && npm install
-    command: php artisan serve
+    before: echo "before script"
+    init: composer create-project --prefer-dist laravel/laravel blog "5.8.*" && mv blog/{,.}* . && composer install && npm install
+    command: php artisan serve && npm run watch
   - name: Terminal 2
     before: echo "before script"
     init: echo "init script"
-    command: npm run watch
+    command: echo "command script"
 ports:
   - port: 8000
     onOpen: open-preview
