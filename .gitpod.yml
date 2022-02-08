@@ -1,7 +1,7 @@
 tasks:
   - name: Terminal 1
-    before: composer create-project --prefer-dist laravel/laravel blog "5.8.*" && mv blog/{,.}* .
-    init: rm -rf blog && composer install && npm install
+    before: composer create-project --prefer-dist laravel/laravel blog "5.8.*" || mv blog/{,.}* .
+    init: rm -rf blog || composer install || npm install
     command: php artisan serve && npm run watch
   # - name: Terminal 2
   #   before: echo "before script"
